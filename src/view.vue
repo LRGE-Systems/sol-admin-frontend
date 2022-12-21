@@ -98,9 +98,15 @@
     },
 
     beforeCreate: function() {
-      if (auth.user == null) return
-
-      this.$i18n.locale = auth.user.locale
+      if (auth.user == null) {
+        let lang = localStorage.getItem("locale") ? localStorage.getItem("locale").replaceAll('"','') : null;
+        if(lang){
+          this.$i18n.locale = lang;
+        }
+      }else{
+        this.$i18n.locale = auth.user.locale
+        localStorage.setItem("locale",auth.user.locale);
+      }
     }
   }
 

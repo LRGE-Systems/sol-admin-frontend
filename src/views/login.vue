@@ -32,6 +32,7 @@
 
 <template lang="pug">
   .tool.login.container
+    <language-toggle />
     .content.text-center.logo-container
 
       img(src="@/assets/images/logo.png" class="logo")
@@ -94,7 +95,12 @@
 </template>
 
 <script>
+  // import LanguageToggle from '../components/language-toggle.vue';
+
   export default {
+    // components: {
+    //   LanguageToggle
+    // },
     props: {
       redirect: { type: String } // default para rota "home"
     },
