@@ -8,7 +8,7 @@
         id: Code (ID)
         name: Name
         email: Email
-        cpf: CPF
+        cpf: SSN
         phone: Phone
         providerId: Vendor
         providerName: Vendor
@@ -17,8 +17,8 @@
         name:
           missing: Name cannot be blank
         cpf:
-          missing: CPF cannot be blank
-          invalid: Invalid CPF (000.000.000-00)
+          missing: SSN cannot be blank
+          invalid: Invalid SSN (000.000.000-00)
         phone:
           missing: Phone cannot be blank
           invalid: 'Invalid phone Format: (00) 00000-0000'

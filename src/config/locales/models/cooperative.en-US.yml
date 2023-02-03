@@ -7,11 +7,11 @@
       attributes:
         id: Code (ID)
         name: Name
-        cnpj: CNPJ
+        cnpj: EIN
         city: Municipality
 
       errors:
         name:
           missing: Name cannot be blank
         cnpj:
-          missing: CNPJ cannot be blank
+          missing: EIN cannot be blank

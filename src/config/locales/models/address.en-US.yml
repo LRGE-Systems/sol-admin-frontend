@@ -16,7 +16,7 @@
         address: Street name
         number: Number
         neighborhood: District
-        cep: Postal code (CEP)
+        cep: Postal code (Zip Code)
         complement: Second address line
         referencePoint: Point of reference
         phone: Phone

@@ -9,7 +9,7 @@
         nationality: Nationality
         civilState: Marital status
         rg: ID (RG)
-        cpf: CPF
+        cpf: SSN
         validUntil: Effective date
         civil_states:
           single: Single

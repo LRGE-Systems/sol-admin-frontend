@@ -9,7 +9,7 @@
       button:
         new: New vendor user
       search:
-        placeholder: Search by user name, CPF, phone or email
+        placeholder: Search by user name, SSN, phone or email
 
       destroy:
         title: Delete user
