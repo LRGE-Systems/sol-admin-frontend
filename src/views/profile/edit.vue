@@ -31,6 +31,10 @@
         .row
           .columns.six
             label
+              | {{ $t('models.admin.attributes.project') }}
+            div.mb-1
+              | {{ admin.organization.name }}
+            label
               | {{ $t('models.admin.attributes.name') }}
             div.mb-1
               | {{ admin.name }}

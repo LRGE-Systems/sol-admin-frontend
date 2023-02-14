@@ -7,6 +7,7 @@ pt-BR:
       attributes:
         id: Código (ID)
         name: Nome
+        project: Projeto
         email: E-mail
         covenantId: Convênio
         covenantName: Convênio

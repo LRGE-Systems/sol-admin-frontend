@@ -8,6 +8,7 @@
         id: Code (ID)
         name: Name
         email: Email
+        project: Project
         covenantId: Covenant
         covenantName: Covenant
         password: Password
