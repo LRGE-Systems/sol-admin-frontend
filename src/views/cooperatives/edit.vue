@@ -65,6 +65,16 @@
               :error="errorsLegalRepresentative['legal_representative.nationality']"
             )
 
+        .row
+          .eight.columns
+            input-field(
+              type="text",
+              model="legal_representative",
+              v-model="legal_representative.email",
+              name="cooperative[legal_representative_attributes][email]",
+              :error="errorsLegalRepresentative['legal_representative.email']"
+            )
+
 
         .row
           .three.columns

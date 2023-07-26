@@ -21,6 +21,7 @@
         referencePoint: Punto de referencia
         phone: Teléfono
         email: Correo electrónico
+        countryId: País
 
       errors:
         address:

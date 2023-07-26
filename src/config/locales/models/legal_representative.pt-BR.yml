@@ -6,6 +6,7 @@ pt-BR:
 
       attributes:
         name: Nome
+        email: Email
         nationality: Nacionalidade
         civilState: Estado civil
         rg: RG

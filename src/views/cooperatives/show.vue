@@ -92,6 +92,11 @@
           span {{ legal_representative.nationality }}
 
       .row
+        .eight.columns
+          label {{ $t('models.legal_representative.attributes.email') }}
+          span {{ legal_representative.email }}
+
+      .row
         .three.columns
           label {{ $t('models.legal_representative.attributes.civilState') }}
           span {{ $t('models.legal_representative.attributes.civil_states.' + legal_representative.civil_state) }}

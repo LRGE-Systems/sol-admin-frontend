@@ -21,6 +21,7 @@ pt-BR:
         referencePoint: Ponto de referência
         phone: Telefone
         email: E-mail
+        countryId: País
 
       errors:
         address:
