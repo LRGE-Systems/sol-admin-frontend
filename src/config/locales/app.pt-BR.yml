@@ -1,6 +1,9 @@
 pt-BR:
   app: 'sdc-admin-frontend.vue'
 
+  manual: Manual
+  manual_link: https://www.sol-app.net/s/PTManual-Administrador.pdf
+
   button:
     search: Buscar
     searching: Buscando

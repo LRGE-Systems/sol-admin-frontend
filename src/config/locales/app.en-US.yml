@@ -1,6 +1,10 @@
 ﻿en-US:
   app: 'sdc-admin-frontend.vue'
 
+  manual: Manual
+  manual_link: https://www.sol-app.net/s/ENManual-Administrator.pdf
+
+
   button:
     search: Search
     searching: Searching

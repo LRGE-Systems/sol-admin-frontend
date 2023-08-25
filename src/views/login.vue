@@ -74,7 +74,6 @@
 
                   .button.mb-0.mt-1.u-full-width(@click="passwordOverlay = true")
                     | {{ $t('.button.forgot_password') }}
-
     modal-wnd(v-if="passwordOverlay", @close="passwordOverlay = false", confirmButtonClass="button-success", @confirm="submitForgotPassword")
       .password-container
         h4.mt-2 {{ $t('.button.forgot_password') }}
@@ -91,6 +90,10 @@
             :label="$t('.fields.username.label')",
             :error="errors.admin"
           )
+
+    div#footerContainer
+      a(:href="$t('manual_link')", target="_blank")
+        | {{ $t('manual') }}
 
 </template>
 

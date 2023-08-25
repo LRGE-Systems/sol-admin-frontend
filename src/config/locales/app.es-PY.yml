@@ -1,6 +1,10 @@
 ﻿es-PY:
   app: 'sdc-admin-frontend.vue'
 
+  manual: Manual
+  manual_link: https://www.sol-app.net/s/ESManual-Administrador.pdf
+
+
   button:
     search: Buscar
     searching: Buscando
