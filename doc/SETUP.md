@@ -1,17 +1,3 @@
-```bash
-yarn add global @vue/cli # 3.0
-vue create sdc-admin-frontend.vue
-# manually select: pwa, router, ...
-```
-
-> É possível criar várias apps com a config `pages` no `vue.config.js`
-> - @see https://cli.vuejs.org/config/#pages
-
-
-bugs
-- https://github.com/vuejs/vue-cli/issues/1132 (Safari macOS)
-
-
 RUNNING
 ----
 ```bash

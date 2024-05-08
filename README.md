@@ -1,9 +1,9 @@
-# SOL ADMINISTRADOR
+# SOL ADMINISTRATOR
 
-Para que as associações e cooperativas realizem as licitações de aquisição de bens, serviços e obras relativas aos seus projetos, os Governos do Estado da Bahia e do Rio Grande do Norte desenvolveram e disponibilizaram o aplicativo de compras SOL (Solução Online de Licitações).
+In order for associations and cooperatives to carry out bids for the acquisition of goods, services and works related to their projects, the Governments of the State of Bahia and Rio Grande do Norte developed and made available the SOL purchasing application (Online Bidding Solution).
 
 ---
 
 ## SETUP
 
-- Informações de setup em `doc/SETUP.md`
+- Setup information in `doc/SETUP.md`
