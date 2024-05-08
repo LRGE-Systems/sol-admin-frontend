@@ -36,7 +36,7 @@
                 | {{ item.title }}
             td
               router-link.router-link(:to="{ name: 'item', params: { id: item.id } }")
-                | {{ item.classification_name }}
+                | {{ item.classification_name.split(" / ").map((e,i)=>$t("classification.label."+e)).join(" / ")  }}
             td
               router-link.router-link(:to="{ name: 'item', params: { id: item.id } }")
                 | {{ item.unit_name }}

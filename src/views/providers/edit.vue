@@ -278,6 +278,8 @@
 
 
       getClassifications() {
+        let i18n = this.$i18n;
+
         return this.$http.get('/search/classifications')
           .then((response) => {
             let grouped = _.groupBy(response.data, 'classification_id')
@@ -287,8 +289,13 @@
             headers.filter(function(elem) {
               let currentClassification = {
                 id: elem.id,
-                text: elem.text,
-                children: grouped[elem.id]
+                text: i18n.t("classification.label."+elem.text.split(" - ")[1]) ,
+                children: grouped[elem.id].map((e)=>{
+                  return {
+                    ...e,
+                    text: i18n.t("classification.label."+e.text.split(" / ")[1])
+                  }
+                })
               }
 
               classifications.push(currentClassification)
@@ -347,14 +354,19 @@
       },
 
       getProvider() {
+        let i18n = this.$i18n;
         return this.$http.get('/administrator/providers/' + this.params.id)
           .then((response) => {
             this.provider = response.data
             this.address = this.provider.address || {}
             this.legal_representative = this.provider.legal_representative || {}
             this.legal_representative_address = this.provider.legal_representative.address || {}
-            this.provider_classifications = this.provider.provider_classifications || []
-
+            this.provider_classifications = (this.provider.provider_classifications || []).map((e)=>{
+              return {
+                ...e,
+                name: e.name.split(" / ").map((e, i)=>i18n.t("classification.label."+(i==0?(e.split(" - ")[1]):e))).join(" / ") 
+              }
+            })
           }).catch((_err) => {
             this.error = _err
             console.error(_err)

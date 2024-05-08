@@ -155,7 +155,7 @@
 
       ul(v-for="provider_classification in provider_classifications")
         li
-          | {{ provider_classification.name }}
+          | {{ provider_classification.name.split(" / ").map((e,i)=>$t("classification.label."+(i==0?e.split(" - ")[1]:e))).join(" / ")  }}
 
     .card.mt-2.mb-2
       .row

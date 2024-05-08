@@ -39,8 +39,7 @@
       .row
         .columns
           label {{ $t('models.item.attributes.classificationId') }}
-          span {{ item.classification_name }}
-
+          span {{ item.classification_name.split(" / ").map((e,i)=>$t("classification.label."+e)).join(" / ")  }}
       .row
         .twelve.columns
           label {{ $t('models.item.attributes.description') }}

@@ -134,10 +134,15 @@
     methods: {
       fetch() {
         let params = this.params
-
+        let i18n = this.$i18n;
         return this.$http.get('/administrator/reports/contracts', { params })
           .then((response) => {
-            this.results  = response.data
+            this.results  = response.data.map((e)=>{
+              return {
+                ...e,
+                label: i18n.t("classification.label."+e.label) 
+              }
+            })
             this.groupedResults = _.chunk(this.results, 3)
 
             this.initChart()

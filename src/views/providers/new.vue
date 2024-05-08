@@ -289,6 +289,7 @@
       },
 
       getClassifications() {
+        let i18n = this.$i18n;
         return this.$http.get('/search/classifications')
           .then((response) => {
             let grouped = _.groupBy(response.data, 'classification_id')
@@ -298,8 +299,13 @@
             headers.filter(function(elem) {
               let currentClassification = {
                 id: elem.id,
-                text: elem.text,
-                children: grouped[elem.id]
+                text: i18n.t("classification.label."+elem.text.split(" - ")[1]) ,
+                children: grouped[elem.id].map((e)=>{
+                  return {
+                    ...e,
+                    text: i18n.t("classification.label."+e.text.split(" / ")[1])
+                  }
+                })
               }
 
               classifications.push(currentClassification)

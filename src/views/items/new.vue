@@ -145,6 +145,7 @@
       },
 
       getClassifications() {
+        let i18n = this.$i18n;
         return this.$http.get('/search/classifications')
           .then((response) => {
             let grouped = _.groupBy(response.data, 'classification_id')
@@ -156,8 +157,13 @@
             headers.filter(function(elem) {
               let currentClassification = {
                 id: elem.id,
-                text: elem.text,
-                children: grouped[elem.id]
+                text: i18n.t("classification.label."+elem.text.split(" - ")[1]) ,
+                children: grouped[elem.id].map((e)=>{
+                  return {
+                    ...e,
+                    text: i18n.t("classification.label."+e.text.split(" / ")[1])
+                  }
+                })
               }
 
               classifications.push(currentClassification)
@@ -173,11 +179,25 @@
 
       getChildrenClassifications() {
         let params = { classification_id: this.item.classification_id }
-
+        let i18n = this.$i18n;
         return this.$http.get('/search/classifications', { params })
           .then((response) => {
             response.data.unshift({ id: 0, text: this.$t('options.prompt') })
-            this.classificationChildrenOptions = response.data
+
+            this.classificationChildrenOptions = response.data.map((e)=>{
+              let parts = e.text.split(" / ").map((pitem,i)=>{
+                if(e.text.includes("/")){
+                  return i18n.t("classification.label."+(i==0 ? pitem.split(" - ")[1] : pitem));
+                }else{
+                  return pitem;
+                }
+              })
+              return {
+                ...e,
+                text: parts.join(" / ")
+              }
+            });
+
 
           }).catch((_err) => {
             this.error = _err
