@@ -1,0 +1,8 @@
+version: "2"
+services:
+    admin:
+        image: thhegal/sol-cloud-admin:latest
+        volumes: 
+            - ./secrets_admin.yml:/app/src/config/secrets.yml
+        ports:
+            - 8080:8080

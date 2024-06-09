@@ -7,3 +7,5 @@ In order for associations and cooperatives to carry out bids for the acquisition
 ## SETUP
 
 - Setup information in `doc/SETUP.md`
+
+## NODEJS 10
