@@ -1,8 +1,20 @@
 version: "2"
 services:
-    admin:
+    adminBuild:
         image: thhegal/sol-cloud-admin:latest
         volumes: 
             - ./secrets_admin.yml:/app/src/config/secrets.yml
+            - ./dist:/app/build
+
+    admin:
+        image: nginx
+        volumes:
+            - ./dist:/usr/share/nginx/html
+            - ./nginx_admin.conf:/etc/nginx/conf.d/default.conf
         ports:
-            - 8080:8080
+            - 8083:80
+        depends_on:
+            - adminBuild
+        # environment:
+            # - NGINX_HOST=foobar.com
+            # - NGINX_PORT=80
